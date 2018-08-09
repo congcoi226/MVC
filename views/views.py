@@ -22,7 +22,7 @@ def get_subject_with_class_id():
 		for each_subject in subjects:
 			print('Name Subject: ',each_subject.name)
 	else:
-		print('Not fine this class id')
+		print('Not find this class id')
 	return True
 
 def get_subject_with_teacher_id():
@@ -36,7 +36,7 @@ def get_subject_with_teacher_id():
 		for each_subject in subjects:
 			print('Name Subject: ',each_subject.name)
 	else:
-		print('Not fine this teacher id')
+		print('Not find this teacher id')
 	return True
 
 def get_student_with_subject_id():
@@ -50,5 +50,5 @@ def get_student_with_subject_id():
 		for each_subject in subjects:
 			print('List Student: ',each_subject.name)
 	else:
-		print('Not fine this subject id')
+		print('Not find this subject id')
 	return True
