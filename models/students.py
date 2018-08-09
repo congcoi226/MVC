@@ -17,13 +17,23 @@ class Students(object):
         f.write({},{},{}.format(self.name, self.address,self.id))
         f.close()
     def get_with_id(self, student_id):
-    	files =  open(student_txt,'r')
-    	for line in files.readlines():
-    		datas = lines.split(',')
-    		if int(data[0]) == student_id:
-    			self.id = student_id
-    			self.name = data[1]
-    			self.address = data[2]
-    		return self
-    	return None
+        files =  open(student_txt,'r')
+        for line in files.readlines():
+            datas = lines.split(',')
+            if int(data[0]) == student_id:
+                self.id = student_id
+                self.name = data[1]
+                self.address = data[2]
+            return self
+        return None
+
+
+    def get_user_input(id=0):
+        print("Please input data: ")
+        name = str(input('Name: '))
+        if len(name) <=3:
+            print('Name must have more than 3 characters')
+            return None
+        address = str(input('Address: '))
+        return Students(name, address, id)        
 

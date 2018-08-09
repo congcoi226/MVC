@@ -27,7 +27,6 @@ class Classes(object):
                 self.id = class_id
                 self.name = datas[1]
                 self.address = datas[2]
-                self.subject_id = datas[3]
                 return self
         return None
 
@@ -40,3 +39,12 @@ class Classes(object):
                 list_subject.append(Classes(id=int(datas[0]), name=datas[1]))
         files.close()
         return list_subject
+
+
+    def get_user_input(id=0):
+        print("Please input data: ")
+        name = str(input('Name: '))
+        if name:
+            return None
+        address = str(input('Address: '))
+        return Classes(name, address, id)

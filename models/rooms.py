@@ -29,3 +29,12 @@ class Rooms(object):
                 self.seat = datas[3]
                 return self
         return None
+
+
+    def get_user_input(id=0):
+        print("Please input data: ")
+        name = str(input('Name: '))
+        if name:
+            return None
+        address = str(input('Address: '))
+        return Rooms(name, address, id)
