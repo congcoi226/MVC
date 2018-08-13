@@ -14,8 +14,7 @@ class Classes(object):
         self.subject_id = subject_id
 
     def save(self):
-        f = open(class_txt, 'w')
-        id += 1
+        f = open('classes.txt','w')
         f.write('{},{},{},{},'.format(id, self.name, self.address, self.subject_id))
         f.close()
 
@@ -41,10 +40,9 @@ class Classes(object):
         return list_subject
 
 
-    def get_user_input(id=0):
-        print("Please input data: ")
-        name = str(input('Name: '))
-        if name:
-            return None
+    def get_datas_input(self):
+        print("Please input class datas...")
+        id = str(input('Class ID: '))
+        name = str(input('Name Class: '))
         address = str(input('Address: '))
         return Classes(name, address, id)

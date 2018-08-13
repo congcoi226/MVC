@@ -4,15 +4,14 @@ subject_txt = os.path.join(os.getcwd(), 'datas/subjects.txt')
 student_txt = os.path.join(os.getcwd(), 'datas/students.txt')
 id = 0
 class Subjects(object):
-	def __init__(self, name = None, id = 0,student_id = 0):
+	def __init__(self, name = None, id = 0):
 		self.name = name
 		self.id = id
-		self.student_id = student_id
-	def save():
+
+	def save(self):
 		f = open('subjects.txt','w')
-		id +=1
-		f.write({},{}.format(self.name,self.id,self.student_id))
 		f.close()
+
 	def get_with_id(self,subject_id):
 		files = open(subject_txt,'r')
 		for line in files.readlines():
@@ -34,10 +33,9 @@ class Subjects(object):
 		files.close()
 		return list_student
 
-
-	def get_user_input(id=0):
-		print("Please input data: ")
-		name = str(input('Name: '))
-		if name:
-			return None
+	def get_datas_input(self):
+		print("Please input subject datas...")
+		id = str(input('Subject ID: '))
+		name = str(input('Name Subject: '))
 		return Subjects(name,id)
+

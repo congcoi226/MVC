@@ -52,3 +52,55 @@ def get_student_with_subject_id():
 	else:
 		print('Not find this subject id')
 	return True
+
+def get_datas_school():
+	while True:
+		schools = Controllers().get_datas_school()
+		if schools:
+			schools.save()
+		play_again = input("Press 'n' to stop, other to continue: ")
+		if play_again == 'n' or play_again == "N":
+			break
+def get_datas_class():
+	while True:
+		classes = Controllers().get_datas_class()
+		if classes:
+			classes.save()
+		play_again = input("Press 'n' to stop, other to continue: ")
+		if play_again == 'n' or play_again == "N":
+			break
+def get_datas_room():
+	while True:
+		rooms = Controllers().get_datas_room()
+		if rooms:
+			rooms.save()
+		play_again = input("Press 'n' to stop, other to continue: ")
+		if play_again == 'n' or play_again == "N":
+			break
+def get_datas_subject():
+	while True:
+		subjects = Controllers().get_datas_subject()
+		if subjects:
+			subjects.save()
+		play_again = input("Press 'n' to stop, other to continue: ")
+		if play_again == 'n' or play_again == "N":
+			break
+def get_datas_teacher():
+	while True:
+		teachers = Controllers().get_datas_teacher()
+		if teachers:
+			teachers.save()
+		play_again = input("Press 'n' to stop, other to continue: ")
+		if play_again == 'n' or play_again == "N":
+			break
+def get_datas_student():
+	while True:
+		students = Controllers().get_datas_student()
+		if students:
+			students.save()
+		play_again = input("Press 'n' to stop, other to continue: ")
+		if play_again == 'n' or play_again == "N":
+			break
+
+
+

@@ -13,8 +13,7 @@ class Rooms(object):
         self.seat = seat
 
     def save(self):
-        f = open(room_txt,'w')
-        id += 1
+        f = open('room.txt','w')
         f.write('{},{},{},{},'.format(id, self.name, self.address, self.seat))
         f.close()
 
@@ -31,10 +30,9 @@ class Rooms(object):
         return None
 
 
-    def get_user_input(id=0):
-        print("Please input data: ")
-        name = str(input('Name: '))
-        if name:
-            return None
+    def get_datas_input(self):
+        print("Please input room datas...")
+        id = str(input('Room ID: '))
+        name = str(input('Name Room: '))
         address = str(input('Address: '))
         return Rooms(name, address, id)
