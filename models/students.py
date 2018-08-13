@@ -13,8 +13,6 @@ class Students(object):
 
     def save(self):
         f = open('students.txt','w')
-        id +=1
-        f.write({},{},{}.format(self.name, self.address,self.id))
         f.close()
     def get_with_id(self, student_id):
         files =  open(student_txt,'r')
@@ -28,12 +26,22 @@ class Students(object):
         return None
 
 
-    def get_user_input(id=0):
-        print("Please input data: ")
-        name = str(input('Name: '))
-        if len(name) <=3:
-            print('Name must have more than 3 characters')
-            return None
-        address = str(input('Address: '))
-        return Students(name, address, id)        
+def get_user_input():
+    print("Please input data...")
+    id = str(input('ID Student: '))
+    name = str(input('Name Student: '))
+    if len(name) <=3:
+        print('Name must have more than 3 characters')
+        return None
+    address = str(input('Address: '))
+    return Students(name, address, id)
+
+if __name__ == '__main__':
+    while True:
+        student = get_user_input()
+        if student:
+            student.save()
+        play_again = input("Press 'n' to stop, other to continue: ")
+        if play_again == 'n' or play_again == "N":
+            break      
 
