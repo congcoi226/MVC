@@ -40,18 +40,9 @@ class Classes(object):
         return list_subject
 
 
-def get_user_input():
-    print("Please input data...")
-    id = str(input('Class ID: '))
-    name = str(input('Name Class: '))
-    address = str(input('Address: '))
-    return Classes(name, address, id)
-
-if __name__ == '__main__':
-    while True:
-        classes = get_user_input()
-        if classes:
-            classes.save()
-        play_again = input("Press 'n' to stop, other to continue: ")
-        if play_again == 'n' or play_again == "N":
-            break
+    def get_datas_input(self):
+        print("Please input class datas...")
+        id = str(input('Class ID: '))
+        name = str(input('Name Class: '))
+        address = str(input('Address: '))
+        return Classes(name, address, id)

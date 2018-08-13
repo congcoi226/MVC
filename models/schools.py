@@ -16,24 +16,16 @@ class Schools(object):
 		return None
 		
 
-def get_user_input():
-	print("Please input data...")
-	id = str(input('School ID: '))
-	name = str(input('Name School: '))
-	if len(name) <= 3:
-		print('Name must have more than 3 characters')
-		return None
-	address = str(input('Address: '))
-	return Schools(name, address, id)
+	def get_datas_input(self):
+		print("Please input school datas...")
+		id = str(input('School ID: '))
+		name = str(input('Name School: '))
+		if len(name) <= 3:
+			print('Name must have more than 3 characters')
+			return None
+		address = str(input('Address: '))
+		return Schools(name, address, id)
 
-if __name__ == '__main__':
-	while True:
-		school = get_user_input()
-		if school:
-			school.save()
-		play_again = input("Press 'n' to stop, other to continue: ")
-		if play_again == 'n' or play_again == "N":
-			break
 
 
 

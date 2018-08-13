@@ -46,3 +46,33 @@ class Controllers(object):
             return None, None
         response_classes = Classes().get_with_subject_id(class_id)
         return response_subject, response_classes
+
+    def get_datas_school(self):
+        data = Schools().get_datas_input()
+        if not data:
+            return None
+
+    def get_datas_class(self):
+        data = Classes().get_datas_input()
+        if not data:
+            return None
+
+    def get_datas_room(self):
+        data = Rooms().get_datas_input()
+        if not data:
+            return None
+
+    def get_datas_subject(self):
+        data = Subjects().get_datas_input()
+        if not data:
+            return None
+
+    def get_datas_teacher(self):
+        data = Teachers().get_datas_input()
+        if not data:
+            return None
+            
+    def get_datas_student(self):
+        data = Students().get_datas_input()
+        if not data:
+            return None

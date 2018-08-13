@@ -30,18 +30,9 @@ class Rooms(object):
         return None
 
 
-def get_user_input():
-    print("Please input data...")
-    id = str(input('Room ID: '))
-    name = str(input('Name Room: '))
-    address = str(input('Address: '))
-    return Rooms(name, address, id)
-
-if __name__ == '__main__':
-    while True:
-        room = get_user_input()
-        if room:
-            room.save()
-        play_again = input("Press 'n' to stop, other to continue: ")
-        if play_again == 'n' or play_again == "N":
-            break
+    def get_datas_input(self):
+        print("Please input room datas...")
+        id = str(input('Room ID: '))
+        name = str(input('Name Room: '))
+        address = str(input('Address: '))
+        return Rooms(name, address, id)

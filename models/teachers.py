@@ -38,21 +38,12 @@ class Teachers(object):
         return list_subject
 
 
-def get_user_input():
-    print("Please input data...")
-    id = str(input('ID Teacher: '))
-    name = str(input('Name Teacher: '))
-    if len(name) <= 3:
-        print('Name must have more than 3 characters')
-        return None
-    subject = str(input('Subject: '))
-    return Teachers(name, subject, id)
-
-if __name__ == '__main__':
-    while True:
-        teacher = get_user_input()
-        if teacher:
-            teacher.save()
-        play_again = input("Press 'n' to stop, other to continue: ")
-        if play_again == 'n' or play_again == "N":
-            break
+    def get_datas_input(self):
+        print("Please input teacher datas...")
+        id = str(input('ID Teacher: '))
+        name = str(input('Name Teacher: '))
+        if len(name) <= 3:
+            print('Name must have more than 3 characters')
+            return None
+        subject = str(input('Subject: '))
+        return Teachers(name, subject, id)

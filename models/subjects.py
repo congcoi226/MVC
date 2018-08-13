@@ -33,19 +33,9 @@ class Subjects(object):
 		files.close()
 		return list_student
 
+	def get_datas_input(self):
+		print("Please input subject datas...")
+		id = str(input('Subject ID: '))
+		name = str(input('Name Subject: '))
+		return Subjects(name,id)
 
-def get_user_input():
-	print("Please input data...")
-	id = str(input('Subject ID: '))
-	name = str(input('Name Subject: '))
-	return Subjects(name,id)
-
-
-if __name__ == '__main__':
-	while True:
-		subjects = get_user_input()
-		if subjects:
-			subjects.save()
-		play_again = input("Press 'n' to stop, other to continue: ")
-		if play_again == 'n' or play_again == 'N':
-			break
