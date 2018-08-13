@@ -13,8 +13,7 @@ class Rooms(object):
         self.seat = seat
 
     def save(self):
-        f = open(room_txt,'w')
-        id += 1
+        f = open('room.txt','w')
         f.write('{},{},{},{},'.format(id, self.name, self.address, self.seat))
         f.close()
 
@@ -31,10 +30,18 @@ class Rooms(object):
         return None
 
 
-    def get_user_input(id=0):
-        print("Please input data: ")
-        name = str(input('Name: '))
-        if name:
-            return None
-        address = str(input('Address: '))
-        return Rooms(name, address, id)
+def get_user_input():
+    print("Please input data...")
+    id = str(input('Room ID: '))
+    name = str(input('Name Room: '))
+    address = str(input('Address: '))
+    return Rooms(name, address, id)
+
+if __name__ == '__main__':
+    while True:
+        room = get_user_input()
+        if room:
+            room.save()
+        play_again = input("Press 'n' to stop, other to continue: ")
+        if play_again == 'n' or play_again == "N":
+            break

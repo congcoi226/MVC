@@ -14,9 +14,8 @@ class Teachers(object):
 
     def save(self):
         f = open('teachers.txt','w')
-        id +=1
-        f.write({},{},{},{}.format(self.name, self.subject, self.id,self.subject_id))
         f.close()
+
     def get_with_id(self,teacher_id):
         files = open(teacher_txt,'r')
         for line in files.readlines():
@@ -39,12 +38,21 @@ class Teachers(object):
         return list_subject
 
 
-    def get_user_input(id=0):
-        print("Please input data: ")
-        name = str(input('Name: '))
-        if len(name) <= 3:
-            print('Name must have more than 3 characters')
-            return None
-        address = str(input('Address: '))
-        return Schools(name, subject, id)
+def get_user_input():
+    print("Please input data...")
+    id = str(input('ID Teacher: '))
+    name = str(input('Name Teacher: '))
+    if len(name) <= 3:
+        print('Name must have more than 3 characters')
+        return None
+    subject = str(input('Subject: '))
+    return Teachers(name, subject, id)
 
+if __name__ == '__main__':
+    while True:
+        teacher = get_user_input()
+        if teacher:
+            teacher.save()
+        play_again = input("Press 'n' to stop, other to continue: ")
+        if play_again == 'n' or play_again == "N":
+            break
