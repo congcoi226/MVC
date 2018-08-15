@@ -17,8 +17,8 @@ class Schools(object):
         f.close()
 
     def get_with_id(self,school_id):
-    	files = open(school_txt,'r')
-    	for line in files.readlines():
+    	file = open(school_txt,'r')
+    	for line in file.readlines():
     		datas = lines.split(',')
     		if int(datas[0] == school_id):
     			self.id = school_id
