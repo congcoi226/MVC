@@ -3,6 +3,7 @@ from views.views import get_subject_with_class_id
 from views.views import get_subject_with_teacher_id
 from views.views import get_student_with_subject_id
 from views.views import input_school_data
+from views.views import input_room_data
 
 
 if __name__ == '__main__':

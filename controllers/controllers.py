@@ -50,6 +50,7 @@ class Controllers(object):
     def create_school(self, name, address):
         if len(name) < 3:
             return False
-        school = Schools(name, address)
-        school.save()
+        schools = Schools(name, address)
+        schools.save()
         return True
+
