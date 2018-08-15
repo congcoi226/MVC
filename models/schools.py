@@ -12,9 +12,10 @@ class Schools(object):
 
     def save(self):
         f = open('schools.txt','w')
-        id +=1
-        f.write({},{},{}.format(self.name, self.address,self.id))
+        self.id +=1
+        f.write('{},{},{}'.format(self.name, self.address,self.id))
         f.close()
+
     def get_with_id(self,school_id):
     	files = open(school_txt,'r')
     	for line in files.readlines():

@@ -46,3 +46,10 @@ class Controllers(object):
             return None, None
         response_classes = Classes().get_with_subject_id(class_id)
         return response_subject, response_classes
+
+    def create_school(self, name, address):
+        if len(name) < 3:
+            return False
+        school = Schools(name, address)
+        school.save()
+        return True
