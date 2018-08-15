@@ -53,12 +53,12 @@ def get_student_with_subject_id():
 		print('Not find this subject id')
 	return True
 
-def input_school_data():
-	print('Please enter school data:')
+def input_school_datas():
+	print('Please enter school data...')
 	name = input('School name (more than 3 chars) : ')
 	address = input('Address: ')
 	result = Controllers().create_school(name, address)
 	if result:
-		print('A new school is created sucessfully')
+		print('A new school is created sucessfully.')
 	else:
-		print('Failed to create a new school')
+		print('Failed to create a new school.')
