@@ -13,8 +13,9 @@ class Rooms(object):
         self.seat = seat
 
     def save(self):
-        f = open('room.txt','w')
-        f.write('{},{},{},{},'.format(id, self.name, self.address, self.seat))
+        f = open('rooms.txt','w')
+        self.id += 1
+        f.write('{},{},{},{},'.format(self.id, self.name, self.address, self.seat))
         f.close()
 
     def get_with_id(self, room_id):
@@ -28,11 +29,3 @@ class Rooms(object):
                 self.seat = datas[3]
                 return self
         return None
-
-
-    def get_datas_input(self):
-        print("Please input room datas...")
-        id = str(input('Room ID: '))
-        name = str(input('Name Room: '))
-        address = str(input('Address: '))
-        return Rooms(name, address, id)

@@ -47,32 +47,34 @@ class Controllers(object):
         response_classes = Classes().get_with_subject_id(class_id)
         return response_subject, response_classes
 
-    def get_datas_school(self):
-        data = Schools().get_datas_input()
-        if not data:
-            return None
+    def create_school(self,name,address):
+        if len(name) < 3:
+            return False
+        schools = Schools(name, address)
+        schools.save()
+        return True
 
-    def get_datas_class(self):
-        data = Classes().get_datas_input()
-        if not data:
-            return None
+    def creat_class(self,name,address):
+        classes = Classes(name = name ,address = address)
+        classes.save()
+        return True
 
-    def get_datas_room(self):
-        data = Rooms().get_datas_input()
-        if not data:
-            return None
+    def creat_room(self,name,address,seat):
+        rooms = Rooms(name = name,address = address,seat = seat)
+        rooms.save()
+        return True
 
-    def get_datas_subject(self):
-        data = Subjects().get_datas_input()
-        if not data:
-            return None
+    def creat_subject(self,name):
+        subjects = Subjects(name)
+        subjects.save()
+        return True
 
-    def get_datas_teacher(self):
-        data = Teachers().get_datas_input()
-        if not data:
-            return None
-            
-    def get_datas_student(self):
-        data = Students().get_datas_input()
-        if not data:
-            return None
+    def creat_teacher(self,name,subject):
+        teachers = Teachers(name = name, subject = subject)
+        teachers.save()
+        return True
+
+    def creat_student(self,name,address):
+        students = Students(name,address)
+        students.save()
+        return True

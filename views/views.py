@@ -53,54 +53,64 @@ def get_student_with_subject_id():
 		print('Not find this subject id')
 	return True
 
-def get_datas_school():
-	while True:
-		schools = Controllers().get_datas_school()
-		if schools:
-			schools.save()
-		play_again = input("Press 'n' to stop, other to continue: ")
-		if play_again == 'n' or play_again == "N":
-			break
-def get_datas_class():
-	while True:
-		classes = Controllers().get_datas_class()
-		if classes:
-			classes.save()
-		play_again = input("Press 'n' to stop, other to continue: ")
-		if play_again == 'n' or play_again == "N":
-			break
-def get_datas_room():
-	while True:
-		rooms = Controllers().get_datas_room()
-		if rooms:
-			rooms.save()
-		play_again = input("Press 'n' to stop, other to continue: ")
-		if play_again == 'n' or play_again == "N":
-			break
-def get_datas_subject():
-	while True:
-		subjects = Controllers().get_datas_subject()
-		if subjects:
-			subjects.save()
-		play_again = input("Press 'n' to stop, other to continue: ")
-		if play_again == 'n' or play_again == "N":
-			break
-def get_datas_teacher():
-	while True:
-		teachers = Controllers().get_datas_teacher()
-		if teachers:
-			teachers.save()
-		play_again = input("Press 'n' to stop, other to continue: ")
-		if play_again == 'n' or play_again == "N":
-			break
-def get_datas_student():
-	while True:
-		students = Controllers().get_datas_student()
-		if students:
-			students.save()
-		play_again = input("Press 'n' to stop, other to continue: ")
-		if play_again == 'n' or play_again == "N":
-			break
+def input_school_datas():
+	print('Please enter school data...')
+	name = input('School name (more than 3 chars) : ')
+	address = input('Address: ')
+	result = Controllers().create_school(name, address)
+	if result:
+		print('A new school is created sucessfully.')
+	else:
+		print('Failed to create a new school.')
 
+def input_class_datas():
+	print('Please enter class data...')
+	name = input('Class name: ')
+	address = input('Address: ')
+	result = Controllers().creat_class(name , address)
+	if result:
+		print('A new class is created sucessfully.')
+	else:
+		print('Failed to creat a new class.')
+
+def input_room_datas():
+	print('Please enter room data...')
+	name = input('Room name: ')
+	address = input('Address: ')
+	seat = input('Seats: ')
+	result = Controllers().creat_room(name , address, seat)
+	if result:
+		print('A new room is created sucessfully.')
+	else:
+		print('Failed to creat a new room.')
+
+def input_subject_datas():
+	print('Please enter subject data...')
+	name = input('Subject name: ')
+	result = Controllers().creat_subject(name)
+	if result:
+		print('A new subject is created sucessfully.')
+	else:
+		print('Failed to creat a new subject.')
+
+def input_teacher_datas():
+	print('Please enter teacher data...')
+	name = input('Teacher name: ')
+	subject = input('Subject: ')
+	result = Controllers().creat_teacher(name,subject)
+	if result:
+		print('A new teacher is created sucessfully.')
+	else:
+		print('Failed to creat a new teacher.')
+
+def input_student_datas():
+	print('Please enter student data...')
+	name = input('Student name: ')
+	address = input('Address: ')
+	result = Controllers().creat_student(name,address)
+	if result:
+		print('A new student is created sucessfully.')
+	else:
+		print('Failed to creat a new student.')
 
 

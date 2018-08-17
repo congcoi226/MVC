@@ -32,10 +32,3 @@ class Subjects(object):
 				list_student.append(Subjects(id=int(datas[0]), name=datas[1]))
 		files.close()
 		return list_student
-
-	def get_datas_input(self):
-		print("Please input subject datas...")
-		id = str(input('Subject ID: '))
-		name = str(input('Name Subject: '))
-		return Subjects(name,id)
-

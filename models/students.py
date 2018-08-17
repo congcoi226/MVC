@@ -23,16 +23,5 @@ class Students(object):
                 self.name = data[1]
                 self.address = data[2]
             return self
-        return None
-
-
-    def get_datas_input(self):
-        print("Please input student datas...")
-        id = str(input('ID Student: '))
-        name = str(input('Name Student: '))
-        if len(name) <=3:
-            print('Name must have more than 3 characters')
-            return None
-        address = str(input('Address: '))
-        return Students(name, address, id)     
+        return None 
 

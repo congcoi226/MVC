@@ -7,15 +7,15 @@ id = 0
 
 class Classes(object):
 
-    def __init__(self, id=0, name=None, address=None, subject_id=None):
+    def __init__(self, name = None, id=0, address=None):
         self.id = id
         self.name = name
         self.address = address
-        self.subject_id = subject_id
 
     def save(self):
         f = open('classes.txt','w')
-        f.write('{},{},{},{},'.format(id, self.name, self.address, self.subject_id))
+        self.id +=1
+        f.write('{},{},{}'.format(self.id, self.name, self.address))
         f.close()
 
     def get_with_id(self, class_id):
@@ -38,11 +38,3 @@ class Classes(object):
                 list_subject.append(Classes(id=int(datas[0]), name=datas[1]))
         files.close()
         return list_subject
-
-
-    def get_datas_input(self):
-        print("Please input class datas...")
-        id = str(input('Class ID: '))
-        name = str(input('Name Class: '))
-        address = str(input('Address: '))
-        return Classes(name, address, id)

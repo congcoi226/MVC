@@ -36,14 +36,3 @@ class Teachers(object):
                 list_subject.append(Teachers(id=int(datas[0]), name=datas[1]))
         files.close()
         return list_subject
-
-
-    def get_datas_input(self):
-        print("Please input teacher datas...")
-        id = str(input('ID Teacher: '))
-        name = str(input('Name Teacher: '))
-        if len(name) <= 3:
-            print('Name must have more than 3 characters')
-            return None
-        subject = str(input('Subject: '))
-        return Teachers(name, subject, id)
