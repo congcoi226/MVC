@@ -15,6 +15,9 @@ class Schools(object):
         f = open(school_txt,'a')
         self.id +=1
         f.write('{},{},{}'.format(self.id,self.name, self.address))
+        f = open('schools.txt','w')
+        self.id +=1
+        f.write('{},{},{}'.format(self.name, self.address,self.id))
         f.close()
 
     def get_with_id(self,school_id):

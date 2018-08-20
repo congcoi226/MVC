@@ -113,4 +113,3 @@ def input_student_datas():
 	else:
 		print('Failed to creat a new student.')
 
-
