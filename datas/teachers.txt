@@ -1,2 +1,1 @@
-1,Teacher A,Subject Subject A and Subject B,1
-2,Teacher B,Subject Subject B and Subject D,2
+1,nguyen van a,history

@@ -9,7 +9,9 @@ class Subjects(object):
 		self.id = id
 
 	def save(self):
-		f = open('subjects.txt','w')
+		f = open(subject_txt,'w')
+		self.id += 1
+		f.write('{},{}'.format(self.id, self.name))
 		f.close()
 
 	def get_with_id(self,subject_id):

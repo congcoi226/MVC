@@ -13,7 +13,7 @@ class Classes(object):
         self.address = address
 
     def save(self):
-        f = open('classes.txt','w')
+        f = open(class_txt,'w')
         self.id +=1
         f.write('{},{},{}'.format(self.id, self.name, self.address))
         f.close()
