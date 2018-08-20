@@ -6,11 +6,15 @@ id = 0
 class Schools(object):
 
     def __init__(self,name = None,address = None,id = 0):
+        self.id = id
         self.name = name
         self.address = address
-        self.id = id
+
 
     def save(self):
+        f = open(school_txt,'a')
+        self.id +=1
+        f.write('{},{},{}'.format(self.id,self.name, self.address))
         f = open('schools.txt','w')
         self.id +=1
         f.write('{},{},{}'.format(self.name, self.address,self.id))

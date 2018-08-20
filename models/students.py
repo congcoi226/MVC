@@ -12,18 +12,18 @@ class Students(object):
         self.id = id
 
     def save(self):
-        f = open('students.txt','w')
-        id +=1
-        f.write({},{},{}.format(self.name, self.address,self.id))
+        f = open(student_txt,'a')
+        self.id += 1
+        f.write('{},{},{}'.format(self.id, self.name, self.address))
         f.close()
     def get_with_id(self, student_id):
-    	files =  open(student_txt,'r')
-    	for line in files.readlines():
-    		datas = lines.split(',')
-    		if int(data[0]) == student_id:
-    			self.id = student_id
-    			self.name = data[1]
-    			self.address = data[2]
-    		return self
-    	return None
+        files =  open(student_txt,'r')
+        for line in files.readlines():
+            datas = lines.split(',')
+            if int(data[0]) == student_id:
+                self.id = student_id
+                self.name = data[1]
+                self.address = data[2]
+            return self
+        return None 
 

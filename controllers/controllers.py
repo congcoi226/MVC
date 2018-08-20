@@ -47,9 +47,35 @@ class Controllers(object):
         response_classes = Classes().get_with_subject_id(class_id)
         return response_subject, response_classes
 
-    def create_school(self, name, address):
+
+    def create_school(self,name,address):
         if len(name) < 3:
             return False
         schools = Schools(name, address)
         schools.save()
+        return True
+
+    def creat_class(self,name,address):
+        classes = Classes(name = name ,address = address)
+        classes.save()
+        return True
+
+    def creat_room(self,name,address,seat):
+        rooms = Rooms(name = name,address = address,seat = seat)
+        rooms.save()
+        return True
+
+    def creat_subject(self,name):
+        subjects = Subjects(name)
+        subjects.save()
+        return True
+
+    def creat_teacher(self,name,subject):
+        teachers = Teachers(name = name, subject = subject)
+        teachers.save()
+        return True
+
+    def creat_student(self,name,address):
+        students = Students(name,address)
+        students.save()
         return True

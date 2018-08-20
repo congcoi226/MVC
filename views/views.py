@@ -62,3 +62,54 @@ def input_school_datas():
 		print('A new school is created sucessfully.')
 	else:
 		print('Failed to create a new school.')
+
+def input_class_datas():
+	print('Please enter class data...')
+	name = input('Class name: ')
+	address = input('Address: ')
+	result = Controllers().creat_class(name , address)
+	if result:
+		print('A new class is created sucessfully.')
+	else:
+		print('Failed to creat a new class.')
+
+def input_room_datas():
+	print('Please enter room data...')
+	name = input('Room name: ')
+	address = input('Address: ')
+	seat = input('Seats: ')
+	result = Controllers().creat_room(name , address, seat)
+	if result:
+		print('A new room is created sucessfully.')
+	else:
+		print('Failed to creat a new room.')
+
+def input_subject_datas():
+	print('Please enter subject data...')
+	name = input('Subject name: ')
+	result = Controllers().creat_subject(name)
+	if result:
+		print('A new subject is created sucessfully.')
+	else:
+		print('Failed to creat a new subject.')
+
+def input_teacher_datas():
+	print('Please enter teacher data...')
+	name = input('Teacher name: ')
+	subject = input('Subject: ')
+	result = Controllers().creat_teacher(name,subject)
+	if result:
+		print('A new teacher is created sucessfully.')
+	else:
+		print('Failed to creat a new teacher.')
+
+def input_student_datas():
+	print('Please enter student data...')
+	name = input('Student name: ')
+	address = input('Address: ')
+	result = Controllers().creat_student(name,address)
+	if result:
+		print('A new student is created sucessfully.')
+	else:
+		print('Failed to creat a new student.')
+

@@ -7,16 +7,15 @@ id = 0
 
 class Classes(object):
 
-    def __init__(self, id=0, name=None, address=None, subject_id=None):
+    def __init__(self, name = None, id=0, address=None):
         self.id = id
         self.name = name
         self.address = address
-        self.subject_id = subject_id
 
     def save(self):
-        f = open(class_txt, 'w')
-        id += 1
-        f.write('{},{},{},{},'.format(id, self.name, self.address, self.subject_id))
+        f = open(class_txt,'a')
+        self.id +=1
+        f.write('{},{},{}'.format(self.id, self.name, self.address))
         f.close()
 
     def get_with_id(self, class_id):
@@ -27,7 +26,6 @@ class Classes(object):
                 self.id = class_id
                 self.name = datas[1]
                 self.address = datas[2]
-                self.subject_id = datas[3]
                 return self
         return None
 
