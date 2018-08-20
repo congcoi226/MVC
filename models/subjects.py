@@ -9,7 +9,7 @@ class Subjects(object):
 		self.id = id
 
 	def save(self):
-		f = open(subject_txt,'w')
+		f = open(subject_txt,'a')
 		self.id += 1
 		f.write('{},{}'.format(self.id, self.name))
 		f.close()

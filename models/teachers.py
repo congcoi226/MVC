@@ -12,7 +12,7 @@ class Teachers(object):
         self.id = id
 
     def save(self):
-        f = open(teacher_txt,'w')
+        f = open(teacher_txt,'a')
         self.id += 1
         f.write('{},{},{}'.format(self.id, self.name, self.subject))
         f.close()

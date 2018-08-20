@@ -12,7 +12,7 @@ class Schools(object):
 
 
     def save(self):
-        f = open(school_txt,'w')
+        f = open(school_txt,'a')
         self.id +=1
         f.write('{},{},{}'.format(self.id,self.name, self.address))
         f.close()
