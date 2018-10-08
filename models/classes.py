@@ -15,7 +15,7 @@ class Classes(object):
     def save(self):
         f = open(class_txt,'a')
         self.id +=1
-        f.write('{},{},{}'.format(self.id, self.name, self.address))
+        f.write('\n{},{},{}'.format(self.id, self.name, self.address))
         f.close()
 
     def get_with_id(self, class_id):
