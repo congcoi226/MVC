@@ -15,7 +15,7 @@ class Rooms(object):
     def save(self):
         f = open(room_txt,'a')
         self.id += 1
-        f.write('{},{},{},{}'.format(self.id, self.name, self.address, self.seat))
+        f.write('\n{},{},{},{}'.format(self.id, self.name, self.address, self.seat))
         f.close()
 
     def get_with_id(self, room_id):
